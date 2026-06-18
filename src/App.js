@@ -374,7 +374,7 @@ export default function ZyzeQC() {
     setUploading(true);
     setUploadProgress(10);
     const fileName = `${Date.now()}_${videoFile.name.replace(/\s/g, "_")}`;
-    const { data, error } = await supabase.storage.from("tryons").upload(fileName, videoFile, {
+    const { error } = await supabase.storage.from("tryons").upload(fileName, videoFile, {
       cacheControl: "3600",
       upsert: false,
     });
